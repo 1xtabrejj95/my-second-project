@@ -136,7 +136,7 @@ async def play(_, message):
         if len(queue) == 1:
             audio_url = await asyncio.to_thread(get_audio, result["webpage_url"])
             try:
-                await call.play(chat_id, AudioPiped(audio_url))
+                await call.join_group_call(chat_id, AudioPiped(audio_url))
             except Exception:
                 await call.change_stream(chat_id, AudioPiped(audio_url))
 
@@ -169,7 +169,7 @@ async def current(_, message):
 @bot.on_message(filters.command("pause"))
 async def pause(_, message):
     try:
-        await call.pause(message.chat.id)
+        await call.pause_stream(message.chat.id)
         await message.reply_text("⏸️ Paused.")
     except Exception as e:
         await message.reply_text(f"❌ `{str(e)[:200]}`")
@@ -177,7 +177,7 @@ async def pause(_, message):
 @bot.on_message(filters.command("resume"))
 async def resume(_, message):
     try:
-        await call.resume(message.chat.id)
+        await call.resume_stream(message.chat.id)
         await message.reply_text("▶️ Resumed.")
     except Exception as e:
         await message.reply_text(f"❌ `{str(e)[:200]}`")
@@ -186,7 +186,7 @@ async def resume(_, message):
 async def stop(_, message):
     chat_id = message.chat.id
     try:
-        await call.leave_call(chat_id)
+        await call.leave_group_call(chat_id)
     except Exception:
         pass
     queues.pop(chat_id, None)
@@ -204,7 +204,7 @@ async def skip(_, message):
 
     if not q:
         try:
-            await call.leave_call(chat_id)
+            await call.leave_group_call(chat_id)
         except Exception:
             pass
         return await message.reply_text("⏭️ Queue finished.")
@@ -240,4 +240,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
