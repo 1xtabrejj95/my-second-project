@@ -14,8 +14,8 @@ from pytgcalls.types import AudioPiped
 API_ID = int(os.environ.get("API_ID", "38680007"))
 API_HASH = os.environ.get("API_HASH", "cc233beb120c0bd019b2e295d07cb31b")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "8735943404:AAGXitz_yEDs7SaIK4a2FxFs2B9-BNlq-S4")
-SESSION_STRING = os.environ.get("BQJONccAV7uSh7ndaODzh5n0DY6Z6-0FR3HpEpBV8hmZHAU_fTAT6FYx-PWDsd9B5905B1ZE05eIi-4-8TyXvxdKI4pI0LuBINxZoFWvtfZUl_kGevn7unH_CpRIEgyc7gMLMygNLAQyXmm7ZNoljwouDoCdWYwsG0LgNdc97QpLpabvTCAHas5Go-oFtBBRX9qMB9TJ8-tZGhouE2lOoAPMTFPML025Sv7nnO1IFDnIUFcUt9RZjpxpAbgIegsE0s7543sraAdkXGdlHRS2qGGD6apQceR2EehOj9erzAMF0bvcaSAXF9dzM6idflSu_795bRRlROQ7XG2kurpCsV_x5iB8MgAAAAIWYXuSAA", "")
-OWNER_ID = int(os.environ.get("OWNER_ID", "8965421970")
+SESSION_STRING = os.environ.get("SESSION_STRING", "BQJONccAV7uSh7ndaODzh5n0DY6Z6-0FR3HpEpBV8hmZHAU_fTAT6FYx-PWDsd9B5905B1ZE05eIi-4-8TyXvxdKI4pI0LuBINxZoFWvtfZUl_kGevn7unH_CpRIEgyc7gMLMygNLAQyXmm7ZNoljwouDoCdWYwsG0LgNdc97QpLpabvTCAHas5Go-oFtBBRX9qMB9TJ8-tZGhouE2lOoAPMTFPML025Sv7nnO1IFDnIUFcUt9RZjpxpAbgIegsE0s7543sraAdkXGdlHRS2qGGD6apQceR2EehOj9erzAMF0bvcaSAXF9dzM6idflSu_795bRRlROQ7XG2kurpCsV_x5iB8MgAAAAIWYXuSAA")
+OWNER_ID = int(os.environ.get("OWNER_ID", "8965421970"))
 
 # ============================================
 # CLIENTS
